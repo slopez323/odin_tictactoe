@@ -230,6 +230,7 @@ button:active {
     .winner button{
         padding: 5px;
         align-self: start;
+        min-height: 50px;
     }
 }
 
