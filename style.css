@@ -23,6 +23,7 @@ h1 {
     display: grid;
     grid-template-rows: 1fr auto 1fr;
     grid-template-columns: 1fr auto 1fr;
+    gap: 5px;
     justify-items: center;
 }
 
