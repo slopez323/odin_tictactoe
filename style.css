@@ -229,6 +229,7 @@ button:active {
     }
     .winner button{
         padding: 5px;
+        align-self: start;
     }
 }
 
