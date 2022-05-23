@@ -31,6 +31,8 @@ h1 {
     height: min(80vw, 10rem);
     border: 1px solid #7fa99b;
     background-color: #7fa99b;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    border-radius: 4px;
     grid-row: 2;
     grid-column: 2;
 
@@ -122,7 +124,7 @@ h1 {
     border-bottom: 1px solid #8d8d8d;
     background-color: #f4f4f4;
     padding: 0 16px;
-    color: #161616;
+    color: #c9356c;
 }
 
 .show-popup {
@@ -163,9 +165,21 @@ button {
     will-change: transform;
 }
 
+.winner button{
+    width: auto;
+    border: 2px solid #fdc57b;
+    color: #fdc57b;
+}
+
 button:active {
     box-shadow: none;
     background-color: #dde0ab;
+    transform: translateY(0);
+}
+
+.winner button:active {
+    box-shadow: none;
+    background-color: #fdc57b;
     transform: translateY(0);
 }
 
@@ -187,9 +201,14 @@ button:active {
 }
 
 .winner {
+    display: none;
+    align-items: center;
+    grid-template-columns: auto auto;
+    gap: 20px;
     font-family: 'Zen Loop', cursive;
     font-size: 1.4rem;
     color: #c24d2c;
+
     align-self: end;
     grid-row: 1;
     grid-column: 2;
@@ -209,11 +228,16 @@ button:active {
 }
 
 @media (hover:hover) {
-
     button:hover {
         color: #fff;
         background-color: #dde0ab;
         box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
         transform: translateY(-2px);
+    }
+    .winner button:hover{
+       background-color: #fdc57b;
+    }
+    .square:hover{
+        cursor: pointer;
     }
 }
