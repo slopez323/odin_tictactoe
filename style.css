@@ -1,0 +1,219 @@
+:root {
+    font-size: 50px;
+}
+
+body {
+    margin: 0;
+    background-color: #fbf2d5;
+}
+
+h1 {
+    font-family: 'Aclonica', sans-serif;
+    color: #c24d2c;
+    margin: 0;
+    grid-row: 3;
+    grid-column: 2;
+    font-size: 1.6rem;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+    grid-template-columns: 1fr auto 1fr;
+    justify-items: center;
+}
+
+.board {
+    width: min(80vw, 10rem);
+    height: min(80vw, 10rem);
+    border: 1px solid #7fa99b;
+    background-color: #7fa99b;
+    grid-row: 2;
+    grid-column: 2;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.square {
+    border: 1px solid #7fa99b;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: min(20vw, 2.8rem);
+    line-height: 50%;
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    background-color: rgba(198, 195, 218, 0.953);
+}
+
+.p-input {
+    display: none;
+    width: max-content;
+    min-width: 200px;
+    height: max-content;
+    padding: .8rem;
+    font-family: 'Shadows Into Light', cursive;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+.p-input h5 {
+    margin: 0;
+    font-size: .7rem;
+    font-family: 'Aclonica', sans-serif;
+    color: #c51350;
+}
+
+.p-input h6 {
+    margin: 0;
+    font-size: .7rem;
+}
+
+.p-input p {
+    font-family: 'Permanent Marker', cursive;
+    font-size: .5rem;
+    margin: -10px 0 0 0;
+    color: #fdc57b;
+}
+
+.p1-input p {
+    color: #394a51;
+}
+
+.p-input input {
+    width: 80%;
+    height: .5rem;
+    font-size: .5rem;
+    text-align: center;
+    text-transform: uppercase;
+
+    box-sizing: border-box;
+    font-family: 'Zen Loop', cursive;
+    vertical-align: baseline;
+    font-weight: 400;
+    line-height: 1.29;
+    letter-spacing: .16px;
+    border-radius: 0;
+    outline: 2px solid transparent;
+    outline-offset: -2px;
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid #8d8d8d;
+    background-color: #f4f4f4;
+    padding: 0 16px;
+    color: #161616;
+}
+
+.show-popup {
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .2rem;
+}
+
+button {
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #dde0ab;
+    border-radius: 15px;
+    box-sizing: border-box;
+    color: #668ba4;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 60px;
+    min-width: 0;
+    outline: none;
+    padding: 16px 24px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 100%;
+    will-change: transform;
+}
+
+button:active {
+    box-shadow: none;
+    background-color: #dde0ab;
+    transform: translateY(0);
+}
+
+.player-turn {
+    display: none;
+    align-self: end;
+    grid-row: 1;
+    grid-column: 2;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: .6rem;
+    color: rgb(109, 109, 109);
+}
+
+.player-turn span {
+    text-transform: uppercase;
+    font-family: 'Zen Loop', cursive;
+    font-size: 1.2rem;
+    color: #c9356c;
+}
+
+.winner {
+    font-family: 'Zen Loop', cursive;
+    font-size: 1.4rem;
+    color: #c24d2c;
+    align-self: end;
+    grid-row: 1;
+    grid-column: 2;
+}
+
+.line {
+    position: absolute;
+    height: .1rem;
+    background-color: #c51350;
+    transform-origin: left;
+}
+
+@media (max-width:767px) {
+    h1 {
+        font-size: 1rem;
+    }
+}
+
+@media (hover:hover) {
+
+    button:hover {
+        color: #fff;
+        background-color: #dde0ab;
+        box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+        transform: translateY(-2px);
+    }
+}
